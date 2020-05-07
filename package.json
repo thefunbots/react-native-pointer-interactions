@@ -1,0 +1,35 @@
+
+{
+  "name": "react-native-pointer-interactions",
+  "version": "1.0.0",
+  "description": "Support iPad pointer interactions to react native",
+  "main": "index.js",
+  "scripts": {
+  
+  },
+  "keywords": [
+    "react-native",
+    "ipad",
+    "ios",
+    "pointer",
+    "interactions"
+  ],
+  "contributors": [
+    {
+      "name": "Santi Corrales",
+      "email": "santi@thefunbots.com",
+      "url": "https://thefunbots.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react-native": ">=0.60.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thefunbots/react-native-pointer-interactions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thefunbots/react-native-pointer-interactions/issues"
+  }
+}
