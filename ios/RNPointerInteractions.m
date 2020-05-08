@@ -12,5 +12,11 @@
 
 @interface RCT_EXTERN_MODULE(PointerInteractionManager, RCTViewManager)
     RCT_EXPORT_VIEW_PROPERTY(pointerMode, NSString);
+
+    + (BOOL)requiresMainQueueSetup
+    {
+      return YES;  // only do this if your module initialization relies on calling UIKit!
+    }
+
 @end
   

@@ -1,5 +1,5 @@
 import { requireNativeComponent } from 'react-native';
 
-//const RNPointerInteractions = requireNativeComponent('PointerInteraction');
+const PointerInteractionViewIOS = requireNativeComponent('PointerInteraction');
 
-module.exports = requireNativeComponent('PointerInteraction');
+export { PointerInteractionViewIOS as PointerInteractionView }

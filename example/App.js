@@ -2,8 +2,6 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
- * @format
- * @flow
  */
 
 import React, {Fragment} from 'react';
@@ -16,7 +14,9 @@ import {
   Text,
   StatusBar,
   Button,
-  requireNativeComponent
+  requireNativeComponent,
+  TouchableHighlight,
+  Image
 } from 'react-native';
 
 import {
@@ -27,53 +27,88 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const InteractionView = requireNativeComponent('PointerInteraction');
+const PointerInteractionView = requireNativeComponent('PointerInteraction');
 
-//import InteractionView  from 'react-native-pointer-interactions'
+//import { PointerInteractionView } from '@thefunbots/react-native-pointer-interactions';
 
 const App = () => {
+
+  const modes = [
+    {
+      title: "Lift",
+      pointerMode: "lift"
+    },
+    {
+      title: "Highlight",
+      pointerMode: "highlight"
+    },
+    {
+      title: "Hover",
+      pointerMode: "hover"
+    },
+    {
+      title: "Vertical Beam",
+      pointerMode: "verticalBeam"
+    },
+    {
+      title: "Horizontal Beam",
+      pointerMode: "horizontalBeam"
+    },
+    {
+      title: "Automatic",
+      pointerMode: "automatic"
+    },
+  ]
+
+  const renderViewWithPointerMode = (pointerMode) => {
+    const imageSize = 128;
+    return (
+      <View key={pointerMode} style={styles.exampleContainer}>
+        <View style={styles.exampleRow}>
+          <PointerInteractionView pointerMode={pointerMode} style={{padding: 44, borderWidth: 0, borderColor: '#eee'}}>
+            <Text>Simple blank view without touch interaction</Text>
+          </PointerInteractionView>
+        </View>
+        <View style={styles.exampleRow}>
+          <PointerInteractionView pointerMode={pointerMode} style={{borderWidth: 0, borderColor: '#eee', width: imageSize * 2}}>
+            <TouchableHighlight onPress={() => Alert.alert(pointerMode)}>
+              <View style={{backgroundColor: 'blue', borderRadius: 4, height: 44}}>
+              <Text style={{color: '#fff', textAlign: 'center', lineHeight: 44, fontWeight: 'bold' }}>Sample button. Click Me!</Text>
+              </View>
+            </TouchableHighlight>
+          </PointerInteractionView> 
+        </View>
+        <View style={styles.exampleRow}>
+          <PointerInteractionView pointerMode={pointerMode} style={{borderWidth: 0, borderColor: '#eee', width: imageSize, height: imageSize}}>
+            <Image style={{width: imageSize,height: imageSize, resizeMode: 'contain', alignSelf: 'center'}} source={require('./assets/ipad.png')} />
+          </PointerInteractionView>
+        </View>
+      </View>)
+  }
+
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
+      <ScrollView>
 
-          <InteractionView style={{height: 60, width: 200,borderWidth: 1, borderColor: 'red'}}>
-            <Text style={styles.sectionTitle}>Step One</Text>
-          </InteractionView>
-
-
-          <InteractionView pointerMode="verticalBeam" style={{height: 60, width: 200,borderWidth: 1, borderColor: 'red'}}>
-            <Text style={styles.sectionTitle}>Step One</Text>
-          </InteractionView>
-
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-
-                  <InteractionView style={{}}>
-                  <Button
-          onPress={() => Alert.alert('hi')}
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-          </InteractionView>
-
-
+      
           <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
+
+          {modes.map((item) => {
+            return <View key={item.title} style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>{item.title} effect</Text>
+              {/* <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
-              </Text>
+              </Text> */}
+
+              <View>
+                {renderViewWithPointerMode(item.pointerMode)}
+              </View>
             </View>
+          })}
+
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
               <Text style={styles.sectionDescription}>
@@ -92,7 +127,6 @@ const App = () => {
                 Read the docs to discover what to do next:
               </Text>
             </View>
-            <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -137,6 +171,19 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
+  exampleContainer: {
+    flex: 1, 
+    flexDirection: 'row',
+    borderBottomColor: '#eee',
+    borderBottomWidth: 0.5
+  },
+  exampleRow: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '33%',
+    marginVertical: 8,
+    paddingHorizontal: 12,
+  }
 });
 
 export default App;

@@ -3,7 +3,6 @@
 //  RNPointerInteractions
 //
 //  Created by Santi on 07/05/2020.
-//  Copyright © 2020 Facebook. All rights reserved.
 //
 
 import Foundation
@@ -13,34 +12,34 @@ class PointerInteractionView: UIView {
     
     private var _mode: String = "automatic"
 
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    
-    if #available(iOS 13.4, *) {
-        enablePointerInteraction()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        if #available(iOS 13.4, *) {
+            enablePointerInteraction()
+        }
     }
-  }
-  
-  override func layoutSubviews() {
-    super.layoutSubviews()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    if #available(iOS 13.4, *) {
-        enablePointerInteraction()
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
-  }
+  
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        if #available(iOS 13.4, *) {
+            enablePointerInteraction()
+        }
+    }
     
     @objc var pointerMode: NSString? {
-      set {
-        if newValue != nil {
-          self._mode = newValue! as String;
+        set {
+            if newValue != nil {
+                self._mode = newValue! as String;
+            }
         }
-      }
-      get {
-        return nil;
-      }
+        get {
+            return nil;
+        }
     }
 }
 
@@ -57,16 +56,18 @@ extension PointerInteractionView: UIPointerInteractionDelegate {
 
     func pointerInteraction(_ interaction: UIPointerInteraction, styleFor region: UIPointerRegion) -> UIPointerStyle? {
         switch self._mode {
+        case "horizontalBeam":
+            return UIPointerStyle(shape: .horizontalBeam(length: 1))
         case "verticalBeam":
             return UIPointerStyle(shape: .verticalBeam(length: 1))
         case "highlight":
             return UIPointerStyle(effect: .highlight(.init(view: self)))
-        //case "automatic":
+        case "lift":
+            return UIPointerStyle(effect: .lift(.init(view: self)))
+        case "hover":
+            return UIPointerStyle(effect: .hover(.init(view: self)))
         default:
             return UIPointerStyle(effect: .automatic(.init(view: self)))
         }
-        
-        //return UIPointerStyle(effect: .highlight(.init(view: self)))
-        //return UIPointerStyle(shape: .verticalBeam(length: 1))
     }
 }

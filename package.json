@@ -1,25 +1,20 @@
-
 {
-  "name": "react-native-pointer-interactions",
-  "version": "1.0.0",
-  "description": "Support iPad pointer interactions to react native",
+  "name": "@thefunbots/react-native-pointer-interactions",
+  "version": "1.0.0-beta.1",
+  "description": "Expose iPad mouse & track pads interactions to React Native",
   "main": "index.js",
-  "scripts": {
-  
-  },
+  "scripts": {},
   "keywords": [
     "react-native",
     "ipad",
     "ios",
     "pointer",
-    "interactions"
+    "interactions",
+    "mouse",
+    "trackpad"
   ],
   "contributors": [
-    {
-      "name": "Santi Corrales",
-      "email": "santi@thefunbots.com",
-      "url": "https://thefunbots.com"
-    }
+    "Santi Corrales <santi@thefunbots.com> (https://thefunbots.com)"
   ],
   "license": "Apache-2.0",
   "peerDependencies": {
@@ -27,9 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thefunbots/react-native-pointer-interactions.git"
+    "url": "git+https://github.com/thefunbots/react-native-pointer-interactions.git"
   },
   "bugs": {
     "url": "https://github.com/thefunbots/react-native-pointer-interactions/issues"
-  }
+  },
+  "homepage": "https://github.com/thefunbots/react-native-pointer-interactions#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "example"
+  },
+  "author": ""
 }

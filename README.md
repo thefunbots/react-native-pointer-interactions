@@ -5,6 +5,13 @@
   <h3 align="center">Expose iPad mouse & track pads interactions to React Native.</h3>
 </p>
 
+Expose iPad mouse & track pads interactions to React Native bla bla bla more
+
+Ref: https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/pointers/
+
+![demo](https://cdn.thefunbots.com/file/thefunbots-cdn/projects/react-native-pointer-interactions/demo-2.gif
+ "Demo")
+
 ## Getting started
 
 ### Mostly automatic installation
@@ -12,7 +19,7 @@
 **1. Install the library**
 
 ```bash
-npm install react-native-pointer-interactions --save
+npm install @thefunbots/react-native-pointer-interactions --save
 ```
 
 **2. (Optional) Install react-native-swift**
@@ -44,3 +51,49 @@ Add this to the Info plists
 <key>UIApplicationSupportsIndirectInputEvents</key>
 <true/>
 ```
+
+## Usage
+
+### Basic usage
+
+Wrap the views you want to be interactable in `PointerInteractionView`
+
+```jsx
+import { PointerInteractionView } from '@thefunbots/react-native-pointer-interactions';
+
+<PointerInteractionView pointerMode="lift">
+  <Text>Hi</Text>
+</PointerInteractionView>
+```
+
+### Using the High Order Component
+
+Soon
+
+### Props
+
+The component extends the regular View, so you can use the common properties too.
+
+| Prop        | Description                                                                   |
+|-------------|-------------------------------------------------------------------------------|
+| pointerMode | [`automatic`, `lift`, `highlight`, `hover`, `verticalBeam`, `horizontalBeam`] |
+
+## Examples
+
+If you want to play with the API but don't feel like trying it on a real app, you can run the example project. Clone the repo, go to the `example/` folder and run:
+
+```bash
+npm install
+```
+
+If you are running on ios, run `pod install` in the ios folder
+
+Run `react-native start` to start the metro bundler
+
+Run `react-native run-ios` (depending on which platform you want to run the example app on).
+
+You will need to have an iOS device or emulator connected as well as `react-native-cli` package installed globally.
+
+## Troubleshooting
+
+- It doesn't work when wrapping `react-native-gesture-handler` buttons
