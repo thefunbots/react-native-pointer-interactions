@@ -1,6 +1,6 @@
 {
   "name": "@thefunbots/react-native-pointer-interactions",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Expose iPad mouse & track pads interactions to React Native",
   "main": "index.js",
   "scripts": {},
