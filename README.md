@@ -5,7 +5,16 @@
   <h3 align="center">Expose iPad mouse & track pads interactions to React Native.</h3>
 </p>
 
-Expose iPad mouse & track pads interactions to React Native bla bla bla more
+<p align="center">
+  <a href="https://www.npmjs.com/package/@thefunbots/react-native-pointer-interactions">
+  <img alt="npm downloads" src="https://img.shields.io/npm/dm/@thefunbots/react-native-pointer-interactions.svg"/></a>
+  <a href="https://www.npmjs.com/package/@thefunbots/react-native-pointer-interactions"><img alt="npm version" src="https://badge.fury.io/js/@thefunbots/react-native-pointer-interactions.svg"/></a>
+  <a href="https://www.codacy.com/gh/thefunbots/react-native-pointer-interactions"><img src="https://app.codacy.com/project/badge/Grade/fa3faa2983494f5fb496d122612ac831" alt="Codacy Badge"></a>
+</p>
+
+---
+
+Expose iPad mouse & track pads interactions to React Native
 
 Ref: https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/pointers/
 
