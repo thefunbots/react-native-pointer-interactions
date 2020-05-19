@@ -9,6 +9,9 @@
   <a href="https://badge.fury.io/js/%40thefunbots%2Freact-native-pointer-interactions"><img src="https://badge.fury.io/js/%40thefunbots%2Freact-native-pointer-interactions.svg" alt="npm version" height="18"></a>
   <a href="https://www.npmjs.com/package/@thefunbots/react-native-pointer-interactions"><img alt="npm downloads" src="https://img.shields.io/npm/dm/@thefunbots/react-native-pointer-interactions.svg" height="18" /></a>
   <a href="https://www.codacy.com/gh/thefunbots/react-native-pointer-interactions"><img src="https://app.codacy.com/project/badge/Grade/fa3faa2983494f5fb496d122612ac831" alt="Codacy Badge" height="18"></a>
+  <a href="https://twitter.com/intent/follow?screen_name=thefunbots">
+    <img src="https://img.shields.io/twitter/follow/thefunbots.svg?label=Follow%20@thefunbots" height="18" alt="Follow @thefunbots" />
+  </a>
 </p>
 
 ---
