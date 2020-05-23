@@ -88,6 +88,7 @@ The component extends the regular View, so you can use the common properties too
 | Prop        | Description                                                                   |
 |-------------|-------------------------------------------------------------------------------|
 | pointerMode | [`automatic`, `lift`, `highlight`, `hover`, `verticalBeam`, `horizontalBeam`] |
+| beamLength  | Sets the cursor size for Beam modes only                                      |
 
 ## Examples
 

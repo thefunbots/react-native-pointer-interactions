@@ -11,6 +11,7 @@ import UIKit
 class PointerInteractionView: UIView {
     
     private var _mode: String = "automatic"
+    private var _beamLength: CGFloat = CGFloat(1)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,11 +35,22 @@ class PointerInteractionView: UIView {
     @objc var pointerMode: NSString? {
         set {
             if newValue != nil {
-                self._mode = newValue! as String;
+                self._mode = newValue! as String
             }
         }
         get {
-            return nil;
+            return nil
+        }
+    }
+    
+    @objc var beamLength: NSNumber? {
+        set {
+            if newValue != nil {
+                self._beamLength = CGFloat(truncating: newValue! as NSNumber)
+            }
+        }
+        get {
+            return nil
         }
     }
 }
@@ -57,9 +69,9 @@ extension PointerInteractionView: UIPointerInteractionDelegate {
     func pointerInteraction(_ interaction: UIPointerInteraction, styleFor region: UIPointerRegion) -> UIPointerStyle? {
         switch self._mode {
         case "horizontalBeam":
-            return UIPointerStyle(shape: .horizontalBeam(length: 1))
+            return UIPointerStyle(shape: .horizontalBeam(length: self._beamLength))
         case "verticalBeam":
-            return UIPointerStyle(shape: .verticalBeam(length: 1))
+            return UIPointerStyle(shape: .verticalBeam(length: self._beamLength))
         case "highlight":
             return UIPointerStyle(effect: .highlight(.init(view: self)))
         case "lift":

@@ -48,11 +48,12 @@ const App = () => {
     },
     {
       title: "Vertical Beam",
-      pointerMode: "verticalBeam"
+      pointerMode: "verticalBeam",
+      beamLength: 50
     },
     {
       title: "Horizontal Beam",
-      pointerMode: "horizontalBeam"
+      pointerMode: "horizontalBeam",
     },
     {
       title: "Automatic",
@@ -60,17 +61,18 @@ const App = () => {
     },
   ]
 
-  const renderViewWithPointerMode = (pointerMode) => {
+  const renderViewWithPointerMode = (pointerMode, beamLength) => {
     const imageSize = 128;
+    beamLength = beamLength || 1;
     return (
       <View key={pointerMode} style={styles.exampleContainer}>
         <View style={styles.exampleRow}>
-          <PointerInteractionView pointerMode={pointerMode} style={{padding: 44, borderWidth: 0, borderColor: '#eee'}}>
+          <PointerInteractionView pointerMode={pointerMode} beamLength={beamLength} style={{padding: 44, borderWidth: 0, borderColor: '#eee'}}>
             <Text>Simple blank view without touch interaction</Text>
           </PointerInteractionView>
         </View>
         <View style={styles.exampleRow}>
-          <PointerInteractionView pointerMode={pointerMode} style={{borderWidth: 0, borderColor: '#eee', width: imageSize * 2}}>
+          <PointerInteractionView pointerMode={pointerMode} beamLength={beamLength} style={{borderWidth: 0, borderColor: '#eee', width: imageSize * 2}}>
             <TouchableHighlight onPress={() => Alert.alert(pointerMode)}>
               <View style={{backgroundColor: 'blue', borderRadius: 4, height: 44}}>
               <Text style={{color: '#fff', textAlign: 'center', lineHeight: 44, fontWeight: 'bold' }}>Sample button. Click Me!</Text>
@@ -79,7 +81,7 @@ const App = () => {
           </PointerInteractionView> 
         </View>
         <View style={styles.exampleRow}>
-          <PointerInteractionView pointerMode={pointerMode} style={{borderWidth: 0, borderColor: '#eee', width: imageSize, height: imageSize}}>
+          <PointerInteractionView pointerMode={pointerMode} beamLength={beamLength} style={{borderWidth: 0, borderColor: '#eee', width: imageSize, height: imageSize}}>
             <Image style={{width: imageSize,height: imageSize, resizeMode: 'contain', alignSelf: 'center'}} source={require('./assets/ipad.png')} />
           </PointerInteractionView>
         </View>
@@ -104,7 +106,7 @@ const App = () => {
               </Text> */}
 
               <View>
-                {renderViewWithPointerMode(item.pointerMode)}
+                {renderViewWithPointerMode(item.pointerMode, item.beamLength)}
               </View>
             </View>
           })}

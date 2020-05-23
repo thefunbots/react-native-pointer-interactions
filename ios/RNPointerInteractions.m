@@ -12,6 +12,7 @@
 
 @interface RCT_EXTERN_MODULE(PointerInteractionManager, RCTViewManager)
     RCT_EXPORT_VIEW_PROPERTY(pointerMode, NSString);
+    RCT_EXPORT_VIEW_PROPERTY(beamLength, NSNumber);
 
     + (BOOL)requiresMainQueueSetup
     {
