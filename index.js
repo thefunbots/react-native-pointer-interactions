@@ -1,3 +1,7 @@
-import { View } from 'react-native';
+import { requireNativeComponent, View } from 'react-native';
 
-export { View as PointerInteractionView }
+const PointerInteractionView = Platform.OS === 'ios'
+    ? requireNativeComponent('PointerInteraction')
+    : View;
+
+export { PointerInteractionView }
