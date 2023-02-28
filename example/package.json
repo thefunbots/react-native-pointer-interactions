@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.5",
+    "react-native": "0.62.3",
     "@thefunbots/react-native-pointer-interactions": "file:..",
     "react-native-swift": "^1.2.3"
   },
