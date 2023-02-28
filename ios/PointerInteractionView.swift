@@ -12,6 +12,9 @@ class PointerInteractionView: UIView {
     
     private var _mode: String = "automatic"
     private var _beamLength: CGFloat = CGFloat(1)
+    @objc var hoverTint: Bool = true
+    @objc var hoverShadow: Bool = true
+    @objc var hoverScale: Bool = true
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,7 +80,14 @@ extension PointerInteractionView: UIPointerInteractionDelegate {
         case "lift":
             return UIPointerStyle(effect: .lift(.init(view: self)))
         case "hover":
-            return UIPointerStyle(effect: .hover(.init(view: self)))
+            return UIPointerStyle(
+                effect: .hover(
+                    .init(view: self), 
+                    preferredTintMode: self.hoverTint ? .overlay : .none,
+                    prefersShadow: self.hoverShadow,
+                    prefersScaledContent: self.hoverScale
+                )
+            )
         default:
             return UIPointerStyle(effect: .automatic(.init(view: self)))
         }

@@ -85,10 +85,13 @@ Soon
 
 The component extends the regular View, so you can use the common properties too.
 
-| Prop        | Description                                                                   |
-|-------------|-------------------------------------------------------------------------------|
-| pointerMode | [`automatic`, `lift`, `highlight`, `hover`, `verticalBeam`, `horizontalBeam`] |
-| beamLength  | Sets the cursor size for Beam modes only                                      |
+| Prop        | Default       | Description                                                                   |
+|-------------|---------------|-------------------------------------------------------------------------------|
+| pointerMode | `'automatic'` | [`automatic`, `lift`, `highlight`, `hover`, `verticalBeam`, `horizontalBeam`] |
+| beamLength  |               | Sets the cursor size for Beam modes only                                      |
+| hoverShadow | `true`        | Determines if the view should have a shadow when hovered                      |
+| hoverScale  | `true`        | Determines if the view should scale up when hovered                           |
+| hoverTing   | `true`        | Determines if the view should have an overlay tint when hovered               |
 
 ## Examples
 

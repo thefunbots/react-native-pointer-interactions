@@ -13,6 +13,9 @@
 @interface RCT_EXTERN_MODULE(PointerInteractionManager, RCTViewManager)
     RCT_EXPORT_VIEW_PROPERTY(pointerMode, NSString);
     RCT_EXPORT_VIEW_PROPERTY(beamLength, NSNumber);
+    RCT_EXPORT_VIEW_PROPERTY(hoverTint, BOOL);
+    RCT_EXPORT_VIEW_PROPERTY(hoverShadow, BOOL);
+    RCT_EXPORT_VIEW_PROPERTY(hoverScale, BOOL);
 
     + (BOOL)requiresMainQueueSetup
     {
